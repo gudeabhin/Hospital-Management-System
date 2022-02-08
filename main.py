@@ -64,11 +64,9 @@ except:
 
 
 dep_names = "SELECT distinct dname FROM Departments order by dname;"
-try:
-    depts = query_db(dep_names)["dname"].tolist()
-    dept = st.selectbox("Choose a Department", depts)
-except:
-    st.write("Sorry! Something went wrong with your query, please try again.")
+depts = query_db(dep_names)["dname"].tolist()
+dept = st.selectbox("Choose a Department", depts)
+st.write("Sorry! Something went wrong with your query, please try again.")
 
 if state:
     if dept:
