@@ -26,6 +26,7 @@ def query_db(sql: str):
     # print(f"Running query_db(): {sql}")
 
     db_info = get_config()
+    print(db_info)
     db_info['user']="postgres"
     # Connect to an existing database
     conn = psycopg2.connect(**db_info)
